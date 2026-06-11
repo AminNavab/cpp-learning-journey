@@ -3,7 +3,18 @@
 #include<string>
 using namespace std;
 
+// *** (typedef) *** => make your type
+// (1) => typedef - main_type - new_type;
+typedef string string_a;
+typedef int int_a;
+typedef double double_a;
+typedef char char_a;
 
+// (2) => using - new_type = main_type;
+using string_aa = string;
+using int_aa = int;
+using double_aa = double;
+using char_aa = char;
 int main(){
     // type - name(identifier) = value
     // (1) int
@@ -42,6 +53,20 @@ int main(){
     int x_3(11); // direct initialization
     int x_4{11}; // unifrom initialization
     int x_5{5+6};
+
+    // ***(typedef)***
+    // (1)
+    string_a name_a = "Amin";
+    int_a age_a = 20;
+    double_a height_a = 1.85;
+    char_a unit_a ='m';
+    cout << "\nhello "<<name_a<<" , you have "<<age_a<<" years old and your height is "<<height_a<<" "<<unit_a;
+    // (2)
+    string_a name_aa = "Amin";
+    int_a age_aa = 20;
+    double_a height_aa = 1.85;
+    char_a unit_aa ='m';
+    cout << "\nhello "<<name_aa<<" , you have "<<age_aa<<" years old and your height is "<<height_aa<<" "<<unit_aa;
 
 
 
