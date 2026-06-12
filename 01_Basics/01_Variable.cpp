@@ -68,6 +68,19 @@ int main(){
     char_a unit_aa ='m';
     cout << "\nhello "<<name_aa<<" , you have "<<age_aa<<" years old and your height is "<<height_aa<<" "<<unit_aa;
 
+    // ***operators*** => (+,-,*,/,=,==,<,>,=<,=>,%,new,delete,True,Fales,...)
+    int age  = 20;
+    double height = 1.85;
+    char unit = 'm';
+    string name = "Amin";
+    cout << "hello "<<name<<" , you have "<<age<<" years old and your height is "<<height<<" "<<unit;
+
+    // ***const*** => can't be change (read-only)
+    // const - type - name = value
+    const int year = 10;
+    // year = 20;  error
+
+
 
 
 
