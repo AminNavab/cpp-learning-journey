@@ -9,8 +9,19 @@ void human();
 void human_1(string name_2);
 void print_array_1(int array_1[5]);
 void print_array_2(int array_2[], int size);
+// ***** Functions that return a value to the main function****
+// return = return a value back the spot , where you called the encompassing function
+//(2) int
+int number();
+int number_1(int num_1);
+// (3) double
+double number_2();
+double number_3(double num_5);
+
+
+
 int main(){
-        //(1) void
+    //(1) void
     human();
     string name_2;
     cout<<"tell me your name_1:\n";
@@ -23,6 +34,30 @@ int main(){
     int array_aa[size] = {1,2,3,4,5,6,7,8,9};
     print_array_2(array_aa, size);
     cout<<"********************************\n";
+    //(2) int
+    int num_a{number()};
+    cout<<num_a * 2<<"\n";
+    int num_b = number();
+    cout<<num_b * 2<<"\n";
+
+    int num;
+    cout<<"enter your number_3: \n";
+    cin >> num;
+    int num_c{number_1(num)};
+    int num_d = number_1(num);
+    cout<<num_c + 1<<endl;
+    cout<<num_d + 2<<endl;
+    cout<<"\n********************************\n";
+    //(3)
+    double num_e = number_2();
+    cout<< num_e<<endl;
+
+    double num_x;
+    cout<<"enter number_5:\n";
+    cin>>num_x;
+    double num_f = number_3(num_x);
+    cout<<num_f<<endl;
+    cout<<"************************************\n";
 
     return 0;
 }
@@ -49,4 +84,30 @@ void print_array_2(int array_2[], int size){
         cout<< array_2[i]<<endl;
     }
 
+}
+// ***** Functions that return a value to the main function****
+// return = return a value back the spot , where you called the encompassing function
+//(2) int
+int number(){
+    cout<<"enter number_1\n";
+    int num{};
+    cin>>num;
+    return num;
+}     
+int number_1(int num_1){
+    int x = num_1 * num_1;
+    return x;
+}
+
+// (3) double
+double number_2(){
+    double num_4;
+    cout<<"enter number_4:\n";
+    cin>>num_4;
+    double y = num_4 * 2;
+    return y;
+}
+double number_3(double num_5){
+    double y_1 = num_5 * 5;
+    return y_1;
 }
