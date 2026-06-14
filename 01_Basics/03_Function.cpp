@@ -21,6 +21,13 @@ double number_3(double num_5);
 string full_name_1();
 string full_name_2(string first , string last);
 
+// function input : 
+// (1) = input in function
+// (2) = input in int main_function
+// (3) = You can also use a default parameter value, by using the equals sign (=). 
+// type - function_name(variable = value){}
+// ## for function inputs you can use referenc( &x );  when ????????????
+
 // Now that you understand how functions work,
 //    it is important to learn how variables act inside and outside of functions:
 // (1) : local scope = A variable created inside a function belongs to the local scope of that function,
@@ -37,7 +44,11 @@ void global_scope();
 // ## ** = To sum up, use local variables (with good variable names) as much as you can. 
 
 
-
+// Recursion = Recursion is the technique of making a function call itself.
+//                 This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+int sum(int k);
+int fibo(int num);
+//#######################################################################################################################
 
 int main(){
     //(1) void
@@ -100,6 +111,11 @@ int main(){
     global_scope();   // use x_2 in function
     cout<< "x_2 = "<<x_2<<endl;  // use x_2 in int_main
     cout<<"*******************\n";
+    
+    int result = sum(10);
+    cout<< result<<endl;
+    int fib = fibo(5);
+    cout<< fib<<endl;;
 
     return 0;
 }
@@ -174,3 +190,19 @@ void local_scope(){
 void global_scope(){
     cout<< "x_2 = "<<x_2<<endl;
 }
+int sum(int k) {
+    if (k > 0) {
+      return k + sum(k - 1);
+    }
+    else {
+      return 0;
+    }
+  }
+
+int fibo(int num){
+    if (num == 1 || num == 0){
+        return 1;
+    }
+    return num * fibo(num-1);
+}
+  
