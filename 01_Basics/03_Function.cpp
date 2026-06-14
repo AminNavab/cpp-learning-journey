@@ -17,6 +17,9 @@ int number_1(int num_1);
 // (3) double
 double number_2();
 double number_3(double num_5);
+//(4) string
+string full_name_1();
+string full_name_2(string first , string last);
 
 
 
@@ -58,6 +61,21 @@ int main(){
     double num_f = number_3(num_x);
     cout<<num_f<<endl;
     cout<<"************************************\n";
+    //(4)
+    string person_1 = full_name_1();
+    cout<<person_1<<endl;
+    string person_2 = full_name_2("amin","navab");
+    cout<<person_2<<endl;
+
+    string first;
+    cout<<"tell your first name: \n";
+    cin>>first;
+    string last;
+    cout<<"tell your last name: \n";
+    cin>>last;
+    string person_3 = full_name_2(first,last);
+    cout<<person_3;
+    cout<<"***************************\n";
 
     return 0;
 }
@@ -110,4 +128,18 @@ double number_2(){
 double number_3(double num_5){
     double y_1 = num_5 * 5;
     return y_1;
+}
+//(4) string
+string full_name_1(){
+    string firs_nsme{};
+    cout<<"tell your first name : \n";
+    getline(cin>>ws,firs_nsme);
+    string last_name{};
+    cout<<"tell your last name :\n";
+    cin>>last_name;
+    string full_name = firs_nsme +" "+ last_name;
+    return "you are "+full_name;
+}
+string full_name_2(string first , string last){
+    return "you are "+first+" "+last;
 }
