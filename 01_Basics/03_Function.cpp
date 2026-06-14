@@ -21,6 +21,22 @@ double number_3(double num_5);
 string full_name_1();
 string full_name_2(string first , string last);
 
+// Now that you understand how functions work,
+//    it is important to learn how variables act inside and outside of functions:
+// (1) : local scope = A variable created inside a function belongs to the local scope of that function,
+//            and can only be used inside that function
+void local_scope();
+// (2) : global scope = A variable created outside of a function,
+//            is called a global variable and belongs to the global scope. 
+//            # Global variables are available from within any scope, global and local.
+int x_2 = 10;
+void global_scope();
+// ## If you operate with the same variable name inside and outside of a function, C++ will treat them as two separate variables;
+//           One available in the global scope (outside the function) and one available in the local scope (inside the function):
+// ## In general, you should be careful with global variables, since they can be accessed and modified from any function:
+// ## ** = To sum up, use local variables (with good variable names) as much as you can. 
+
+
 
 
 int main(){
@@ -76,6 +92,14 @@ int main(){
     string person_3 = full_name_2(first,last);
     cout<<person_3;
     cout<<"***************************\n";
+    // local scope:
+    local_scope();
+    // cout<< x_1;      # error!!!!!!!!
+    //-------------
+    // global scope:
+    global_scope();   // use x_2 in function
+    cout<< "x_2 = "<<x_2<<endl;  // use x_2 in int_main
+    cout<<"*******************\n";
 
     return 0;
 }
@@ -142,4 +166,11 @@ string full_name_1(){
 }
 string full_name_2(string first , string last){
     return "you are "+first+" "+last;
+}
+void local_scope(){
+    int x_1 = 5;
+    cout<< "x_1 = "<<x_1<<endl;
+}
+void global_scope(){
+    cout<< "x_2 = "<<x_2<<endl;
 }
