@@ -91,6 +91,23 @@ int main(){
   
   }
 
+  // short hand if , else (ternary operator)
+  // ternary operator ?: = replacement to an if/else statement
+  // (1) variable = (condition) ? expression-true  expression-false :
+  // (2)  condition ? expression_1 : expression_2;  (yes or no)
+  // (3)  cout<<(condition ? expression_1 : expression_2);
+  int age_a{};
+  cout<<"\nenter your age_a\n";
+  cin>>age_a;
+  // (1)
+  string result = (age_a>=18)? "you can drive\n" : "you can't drive_1\n";
+  cout<< result;
+  // (2)
+  age_a>=18 ? cout<<"you can drive\n" : cout<<"you can't drive_2\n";
+  age_a>=18 ? "you can drive\n" : "you can't drive_3\n";  // can not work !!!!!!
+  // (3)
+  cout<<(age_a>=18 ? "you can drive" : "you can't drive_4");
+
 
 return 0;
 }
