@@ -66,6 +66,26 @@ class car_1{
      }
       
 };
+//============================================================================================================
+//============================================================================================================
+// outside constructor:
+//car_1 :: car_1(string x_x, string y_y, string z_z, int w_w, string from){
+    //cout<<"car from "<<from<<endl;
+   // brand = x_x;
+   // model = y_y;
+    //color = z_z;
+   // year = w_w;
+//}
+//------------------------------------------------------------------------------------------------------------
+// outside class method(behavior): {type - class_name :: function_name}
+// You cannot give default values ​​to functions outside of a class. ==>> you can not do (string name = "x")
+void car_1 :: outside_method(){
+    cout<<"hello cpp programer!!!\n";
+}
+void car_1 :: outside_method_2(string name, int age){
+    cout<<"you are "<<name<<" and have "<<age<<" years old.\n";
+}
+
 int main(){
       return 0;
 }
