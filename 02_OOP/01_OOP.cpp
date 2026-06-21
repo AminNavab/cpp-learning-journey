@@ -87,5 +87,54 @@ void car_1 :: outside_method_2(string name, int age){
 }
 
 int main(){
+        cout<<"*************************************************************\n";
+    cout<<"Object Oriented Programing is (OOP): \n";
+    cout<<"1_Encapsulation (Hiding Data)\n";
+    cout<<"2_Abstraction\n";
+    cout<<"3_Inheritance\n";
+    cout<<"4_Polymorphism (Generalization)\n";
+    cout<<"*************************************************************\n";
+    cout<<"this page we learn(class, object, Encapsulation, Abstraction)\n";
+    cout<<"*************************************************************\n";
+
+    // creat a object:
+    car_1 car_amin_1;
+    car_amin_1.brand = "BMW";
+    car_amin_1.model = "m3";
+    car_amin_1.color = "black";
+    car_amin_1.year = 2020;
+    cout<<"amin'car_1 is "<<car_amin_1.brand<<" model "<<car_amin_1.model<<" ,color "<<car_amin_1.color<<" and year "<<car_amin_1.year<<endl;
+    
+    // multiple object:
+    car_1 car_amin_2;
+    car_amin_2.brand = "Benz";
+    car_amin_2.model = "cls";
+    car_amin_2.color = "white";
+    car_amin_2.year = 2022;
+    cout<<"amin'car_2 is "<<car_amin_2.brand<<" model "<<car_amin_2.model<<" ,color "<<car_amin_2.color<<" and year "<<car_amin_2.year<<endl;
+    
+    // methods:
+    car_1 behavior;
+    // (1) => inside class:
+    behavior.inside_method();
+    behavior.inside_method_2();
+    // (2) => outside class:
+    behavior.outside_method();
+    behavior.outside_method_2("reza", 40);
+    
+    // constructors:
+    // (1) => inside constructor:
+    car_1 car_amin_3;
+    car_1 car_amin_4("tesla","model_3", "green", 2024);
+    cout<<"amin'car_4 is "<<car_amin_4.brand<<" model "<<car_amin_4.model<<" ,color "<<car_amin_4.color<<" and year "<<car_amin_4.year<<endl;
+    // (2) => outside constructor:
+    //  like inside constructor..........
+
+    // Access Private Members:
+    car_1 car_amin_5;
+    car_amin_5.set_price(60000);
+    cout<<"amin's car price is "<<car_amin_5.get_price()<<" $.\n";
+
+
       return 0;
 }
