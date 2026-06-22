@@ -70,5 +70,43 @@ class car_son_2father : public car_father_1, public car_father_2{
 };
 
 int main(){
+     cout<<"******************************************************************\n";
+    cout<<"this page we learn (Inheritance)\n";
+    cout<<"derived class (child) = the class that inherits from another class\n";
+    cout<<"base class (parent) = the class being inherited from\n";
+    cout<<"*******************************************************************\n";
+    // Derived class (son):
+    car_son car_amin;
+    car_amin.start();
+    car_amin.stop();
+    car_amin.brand = "BMW";
+    car_amin.color = "black";
+    car_amin.model = "m3";
+    car_amin.set_price(60000);
+    cout<<"amin's car is "<<car_amin.brand<<", model "<<car_amin.model<<", "<<car_amin.year<<", color is "<<car_amin.color<<", price is "<<car_amin.get_price()<<"."<<endl;
+    cout<<"------------------------\n";
+    // Multilevel Inheritance(son_son):
+    car_son_son car_amin_2;
+    // of class(son_son):
+    car_amin_2.run();
+    // of class(son):
+    car_amin_2.stop();
+    // of class(father):
+    car_amin_2.start();
+    cout<<"------------------------\n";
+    // Multiple Inheritance:
+    car_son_2father car_amin_3;
+    // of class(car_son_2father):
+    car_amin_3.speed(220);
+    // of class(father_1):
+    car_amin_3.start();
+    car_amin_3.set_x_1(10);
+    cout<< car_amin_3.get_x_1()<<endl;
+    // of class(father_2):
+    car_amin_3.hock();
+    car_amin_3.set_x_2(20);
+    cout<< car_amin_3.get_x_2()<<endl;
+    cout<<"------------------------\n";
+
       return 0;
 }
