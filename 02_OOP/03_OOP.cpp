@@ -31,3 +31,26 @@ class cat : public animals{
         cout<<"cat's sound is MEWW...MEWW...\n";
     }
 };
+
+
+int main(){
+    cout<<"*********************************\n";
+    cout<<"this page we learn (polymorphism)\n";
+    cout<<"*********************************\n";
+    // main class(father):
+    animals animal;
+    animal.sound();
+    animal.lovly();
+    // polymorphism_1:
+    dog dog;
+    dog.sound();
+    dog.lovly();
+    // polymorphism_2:
+    cat cat;
+    cat.sound();
+    cat.lovly();
+    cout<<"--------------------------------\n";
+
+
+    return 0;
+}
