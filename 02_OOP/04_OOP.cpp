@@ -22,3 +22,20 @@ point :: ~point(){
 void point :: display(){
     cout<<"("<<x<<" , "<<y<<")\n";
 }
+
+int main(){
+    point p1, p2(10), p3(10), p4(100,100);
+    cout<<"------------------\n";
+    p1.display();
+    p2.set_x(2);
+    p2.display();
+    //p3.get_y(2);
+    p3.display();
+    p4.display();
+    cout<<"---------------------\n";
+
+
+
+
+    return 0;
+}
