@@ -2,6 +2,8 @@
 using namespace std;
 double get_total(double array[], int size);
 int serch_array(int array[] , int size , int element);
+void sort_array_1(int array[], int size);
+void sort_array_2(int array[], int size);
 
 int main(){
     // array = a data structure that can hold multiple values
@@ -85,6 +87,64 @@ int main(){
         cout<<my_num<<" is not in the array!!\n";
     }
     cout<< "*********************************************\n";
+     // sort an array
+    int numbers[] = {9,5,7,2,3,4,6,1,8,11,15,12,19};
+    int numbers_1[] = {9,5,7,2,3,4,6,1,8,11,15,12,19};
+    int size_2 = sizeof(numbers)/sizeof(numbers[0]);
+    sort_array_1(numbers, size_2);
+    for(int element : numbers){
+        cout<<element<<endl;
+    }
+    sort_array_2(numbers_1, size_2);
+    for(int element : numbers_1){
+        cout<<element<<endl;
+    }
+    cout<<"******************************************\n";
+    // fill() = filla a range of element whit a apecified value fill(begin, end, value)
+    int size_3 = 3;
+    string foods[size_3];
+    fill(foods, foods + (size_3/3), "pizza");
+    fill(foods+ (size_3/3), foods+ (size_3/3)*2, "hamburger");
+    fill(foods+ (size_3/3)*2, foods+ size_3, "hotdog");
+    for(string food:foods){
+        cout<<food<<endl;
+    }
+    // fill an array whit input user
+    string foods_1[5];
+    int size_4 = sizeof(foods_1)/sizeof(foods_1[0]);
+    for(int i = 0; i<size_4; i++){
+        cout<<"enter your food number "<<i+1<<" : ";
+        std::getline(std::cin, foods_1[i]);
+    }
+    for(string food : foods_1){
+        cout<<food<<endl;
+    }
+    cout<<"**********************************************\n";
+    // multi-dimensional array
+    // # 2d array = {array_1, array_2, array_3, ......}
+    // array [row (سطر)] [column (ستون)];
+    // در‌اعالن‌آرایه‌هاي‌دوبعدي ذكر‌تعداد‌ستون ها‌الزامي‌است.
+    int bmi[3][3] = {{20,21,22},{23,24,25},{26,27,28}};
+    cout<<bmi[0][0]<<endl;
+    int row = sizeof(bmi)/sizeof(bmi[0]);
+    int column = sizeof(bmi[0])/sizeof(bmi[0][0]);
+    for(int i = 0; i<row; i++){
+        for(int j =0; j < column; j++){
+            cout<<bmi[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    // # 3d array = {????????}
+    // 
+    string letters[2][2][2] = {{{"a","b"},{"c","d"}},{{"e","f"},{"g","h"}}} ;
+    for(int i = 0; i<2; i++){
+        for(int j = 0; j<2; j++){
+            for(int k = 0; k<2; k++){
+                cout<< letters[i][j][k]<<" ";
+            }
+        }
+    }
+    cout<<"*********************************************\n";
     return 0;
 }
 
@@ -102,4 +162,28 @@ int serch_array(int array[] , int size , int element){
         }
     }
     return -1;
+}
+void sort_array_1(int array[], int size){
+    int temp;
+    for(int i = 0; i<size-1; i++){
+        for(int j = 0; j<size-i-1; j++){
+            if(array[j] > array[j+1]){  // ##
+                temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }
+    }
+}
+void sort_array_2(int array[], int size){
+    int temp;
+    for(int i = 0; i<size-1; i++){
+        for(int j = 0; j<size-i-1; j++){
+            if(array[j] < array[j+1]){ // ##
+                temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }
+    }
 }
