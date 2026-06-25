@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+double get_total(double array[], int size);
+int serch_array(int array[] , int size , int element);
 
 int main(){
     // array = a data structure that can hold multiple values
@@ -41,5 +43,63 @@ int main(){
     cout<<sizeof(num_1)<<" - "<<sizeof(double)<<" - "<<"The number of elements = "<<sizeof(num_1)/sizeof(double)<<endl;
     cout<<sizeof(name_1)<<" - "<<sizeof(char)<<" - "<<"The number of elements = "<<sizeof(name_1)/sizeof(char)<<endl;
     cout<<"****************************************\n";
+    // show array :
+    // (foreach loop) = loop that eases the traversal over an iterable data set
+    int age[] = {10,20,30};
+    // for loop :
+    for(int i = 0; i<sizeof(age)/sizeof(int);i++){
+        cout<<age[i]<<endl;
+    }
+    // while loop :
+    int i_1 = 0;
+    while(i_1 < sizeof(age)/sizeof(int)){
+        cout<<age[i_1]<<endl;
+        i_1++;
+    }
+    // foreach loop :
+    // for(typr - new_variable : array_name){
+    //    #(code) cout<< new_variable;
+    //}
+    for(int num : age){
+        cout<<num<<endl;
+    }
+    cout<<"*******************************************\n";
+    // pass array to a function
+    double prices[]= {10.5,15.75,18.25,20,78.75};
+    int size = sizeof(prices)/sizeof(prices[0]); // sizeof(arrat[0]) == sizeof(array_type)
+    double total = get_total(prices,size);
+    cout<< total<<" toman pool !!!!\n";
+    cout<<"************************************************\n";
+    // serch an array for an element
+    int num_2[] = {1,2,3,4,5,6,7,8,9};
+    int size_1 = sizeof(num_2)/sizeof(num_2[0]);
+    int index;
+    int my_num;
+    cout<<"enter your num: \n";
+    cin>>my_num;
+    index = serch_array(num_2, size_1, my_num);
+    if (index != -1){
+        cout<<my_num<<" is at index "<<index<<endl;
+    }
+    else{
+        cout<<my_num<<" is not in the array!!\n";
+    }
+    cout<< "*********************************************\n";
     return 0;
+}
+
+double get_total(double array[], int size){
+    double total = 0;
+    for(int i = 0 ; i<size; i++){
+        total += array[i];
+    }
+    return total;
+}
+int serch_array(int array[] , int size , int element){
+    for(int i = 0; i<size; i++){
+        if(array[i] == element){
+           return i;
+        }
+    }
+    return -1;
 }
