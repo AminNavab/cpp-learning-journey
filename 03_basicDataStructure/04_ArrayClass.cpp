@@ -28,6 +28,27 @@ int main(){
     // array_name .back();
     cout<<cars_2.back()<<endl;
     cout<<"*************************\n";
+    // swap arrays :
+    // array_name_1 .swap(array_name_2);
+    array<int , 5> num_1 = {1,2,3,4,5};
+    array<int , 5> num_2 = {11,22,33,44,55};
+    num_1.swap(num_2);
+    for(int i : num_1){    // num_1
+        cout<< i<<endl;
+    }
+    cout<<"------------------------\n";
+    for(int i : num_2){   // num_2
+        cout<< i<<endl;
+    }
+    cout<<"************************\n";
+    // fiil (value) :
+    // array_name .fiil(new_value);
+    array<int, 5> x = {1,2,3,4,5};
+    x.fill(11);
+    for(int i : x){
+        cout<< i << endl;
+    }
+    cout<<"********************\n";
 
     return 0;
 }
