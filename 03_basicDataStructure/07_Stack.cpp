@@ -29,5 +29,32 @@ int main(){
     // benz
     // bmw
     cout<<"******************************************\n";
+     // access stack element :
+    // NOTE : You cannot access stack elements by referring to index numbers, like you would with arrays and vectors
+    //           In a stack, you can only access the top element, which is done using the .top() function:
+    cout<< cars.top()<<endl;
+    cout<< cars.top()<<endl;
+    cout<< cars.top()<<endl;
+    cout<<"******************************************\n";
+    // change a top stack element :
+    // stack_name .top() = new_element;
+    cars.top() = "tesla_1";
+    cout<< cars.top()<<endl;
+    cout<<"******************************************\n";
+    // remove a top stack element :
+    // stack_name .pop();
+    cars.pop();
+    cout<< cars.top()<<endl;
+    cout<<"******************************************\n";
+    // stack size :
+    // stack_name .size();
+    cout<< cars.size()<<endl;
+    cout<<"******************************************\n";
+    // Check if the Stack is Empty :
+    // stack_name .empty();
+    stack<string>cars_1;
+    cout<< cars.empty()<<endl;
+    cout<< cars_1.empty()<<endl;
+    cout<<"******************************************\n";
     return 0;
 }
