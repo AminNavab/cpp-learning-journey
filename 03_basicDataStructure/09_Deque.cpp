@@ -42,5 +42,46 @@ int main(){
         cout<< i<< endl;
     }
     cout<<"*****************************\n";
+    // add deque element : To add elements to a deque,
+    //                     you can use .push_front() to insert an element at the beginning of the deque
+    //                     and .push_back() to add an element at the end:
+
+    cars_2.push_front("tesla");  // to insert an element at the beginning of the deque
+    cars_2.push_back("ford");    // to add an element at the end
+
+    for(string i : cars_2){
+        cout<< i<< endl;
+    }
+    cout<<"*****************************\n";
+    // remove deque element : To remove elements from a deque,
+    //                        use .pop_front() to remove an element from the beginning of the deque
+    //                        and .pop_back() to remove an element at the end:
+
+    cars_2.pop_front();
+    cars_2.pop_back();
+
+    for(string i : cars_2){
+        cout<< i<< endl;
+    }
+    cout<<"*****************************\n";
+    // deque size :
+    // deque_name .size();
+    cout<< cars_2.size()<<endl;
+    cout<<"*****************************\n";
+    // Check if a Deque is Empty :
+    // deque_name .empty();
+    cout<< cars_2.empty()<<endl;
+    cout<< cars_1.empty()<<endl;
+    cout<<"*****************************\n";
+    // show deque :
+    // foreach loop :
+    for(string i : cars_2){
+        cout<< i<< endl;
+    }
+    cout<<"--------------------------\n";
+    // for loop :
+    for(int i = 0; i<cars_2.size(); i++){
+        cout<< cars_2[i]<<endl;
+    }
     return 0;
 }
