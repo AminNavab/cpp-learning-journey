@@ -52,5 +52,74 @@ int main(){
     cout<< *it<<endl;
    }
    cout<<"*******************\n";
+     // foreach loop :
+   // When you are just reading the elements, and don't need to modify them, the for-each loop is much simpler and cleaner than iterators.
+   // However, when you need to add, modify, or remove elements during iteration,
+   //        iterate in reverse, or skip elements, you should use iterators.
+   for(string i : cars){
+    cout<< i<<endl;
+   }
+   cout<<"--------------------\n"; 
+// Loop through vector elements
+for (auto it = cars.begin(); it != cars.end();it++ ) {
+    if (*it == "bmw") {
+      cout<< "bmw is in cars_vector"<<endl;
+    } else {
+      cout<< "(=)"<<endl;
+    }
+  }
+   cout<<"**********************\n";
+   // Iterate in Reverse :
+   // (#) = rbeing() = being();
+   // (#) = rend() = end();
+   for(auto it = cars.rbegin(); it != cars.rend(); it++){
+    cout<< *it<<endl;
+   }
+   cout<<"*************************\n";
+   // Iterate Through other Data Structures :
+   // Iterators are great for code reusability since you can use the same syntax for iterating through vectors,
+   //       lists, deques, sets and maps:
+   
+   // LIST :
+   list<int>num_1 = {1,2,3,4,5};
+   for(auto it = num_1.begin(); it != num_1.end(); it++){
+    cout<< *it<<endl;
+   }
+   cout<<"*******************************\n";
+   // SET :
+   set<int>num_2 = {11,22,33,44,55};
+   for(auto it = num_2.begin(); it != num_2.end(); it++){
+    cout<< *it<<endl;
+   }
+   cout<<"*******************************\n";
+   // QUEUE and STACK = we can't!!!!!!!!!!!
+   cout<<"*************************\n";
+   //DEQUE :
+   deque<int>num_3 {111,222,333,444,555};
+   for(auto it = num_3.begin(); it != num_3.end(); it++){
+    cout<< *it<<endl;
+   }
+   cout<<"*******************************\n";
+   // MAP :
+   map<int, int>num_4 = {{1111,1111},{2222,2222},{3333,3333},{4444,4444},{5555,5555}};
+   for(auto it = num_4.begin(); it != num_4.end(); it++){
+    cout<< it ->first<< " = "<< it->second<<endl;
+   }
+   cout<<"*******************************\n";
+   // ALGORITHMS :
+   // sort() = sort(first_element , last_element);
+   vector<int> x_sort = {1,8,6,4,9,5,7,3,4,9,3,1,7};
+   sort(x_sort.begin(), x_sort.end());
+   for(int i : x_sort){
+    cout<< i<< endl;
+   }
+   cout<<"--------------------\n";
+   // To reverse the order : {being() == rbeing() and end() == rend()}
+   sort(x_sort.rbegin(), x_sort.rend());
+   for(int i : x_sort){
+    cout<< i<< endl;
+   }
+   // set , list , deque , map : like vector .
+   cout<<"*************************\n";
    return 0;
 }
