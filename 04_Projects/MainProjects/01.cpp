@@ -63,3 +63,66 @@ class UserManager{
         }
     }
 };
+int main(){
+    cout<<"*******************************\n";
+    cout<<"*** Login Managment System ****\n";
+    cout<<"*******************************\n";
+    char choice;
+    UserManager usermanage;
+    do{
+        // system("cls");
+        cout<<"\t1.Register User \n";
+        cout<<"\t2.Login \n";
+        cout<<"\t3.Show User List \n";
+        cout<<"\t4.Serch User \n";
+        cout<<"\t5.Delet User \n";
+        cout<<"\t6.Exit \n";
+        cout<<"Enter Your Choice: ";
+        
+        int op;
+        cin>>op;
+        switch (op){
+        case 1:{
+            usermanage.RegisterUser();
+            break;}
+        case 2:{ 
+            string username, password;
+            cout<<"\tEnter User Name: ";
+            cin>>username;
+            cout<<"\tEnter Password: ";
+            cin>>password;
+            usermanage.LoginUser(username, password);
+            break;}
+        case 3:{
+            usermanage.ShowUserList();
+            break;}
+        case 4:{
+            string username;
+            cout<<"Enter User Name: ";
+            cin>>username;
+            usermanage.SerchUser(username);
+            break;}
+        case 5:{
+            string username;
+            cout<<"Enter User Name: ";
+            cin>>username;
+            usermanage.DeletUser(username);
+            break;
+        }
+        case 6:{
+            exit(1);
+            break;
+        }
+        default:{
+            cout<<"Pleass Enter a True Number.\n";
+            break;
+        }
+       }
+       cout<<"Do You Want to Continue [Y/N]: ";
+       cin>>choice;
+    }while (choice == 'y' || choice == 'Y');
+    
+
+
+    return 0;
+}
