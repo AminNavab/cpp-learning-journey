@@ -41,3 +41,28 @@ class Tape : public Publication{
     }
 
 };
+int main(){
+    Book b;
+    Tape t;
+    int op;
+    cout<<"1.Book Information: \n";
+    cout<<"2.Tape Information: \n";
+    cout<<"Pless Enter Your Choice: \n";
+    cin>>op;
+    switch (op){
+    case 1:
+    cout<<"\t\t----- BOOK INFORMATION -----\n";
+    b.get_data();
+    b.put_data();
+        break;
+    case 2:
+    cout<<"\t\t----- TAPE INFORMATION -----\n";
+    t.get_data();
+    t.put_data();
+        break;
+    }
+
+
+
+    return 0;
+}
