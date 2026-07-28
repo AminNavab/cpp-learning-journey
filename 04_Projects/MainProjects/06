@@ -1,0 +1,64 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class Bank_Account{
+    private:
+    string name;
+    int account_num;
+    double balance;
+    public:
+    Bank_Account(string n, int ac, double bal){
+        name = n;
+        account_num = ac;
+        balance = bal;
+    }
+    string get_name(){
+        return name;
+    }
+    int get_account_num(){
+        return account_num;
+    }
+    double get_balance(){
+        return balance;
+    }
+    void deposit(double amount){
+        balance += amount;
+    }
+    void withdraw(double amount){
+        if(amount<=balance){
+            balance -= amount;
+            cout<<"Withdraw Successfully....\n";
+        }
+        else{
+            cout<<"Insufficient Balance.....\n";
+        }
+    }
+};
+class Bank_Managment{
+    private:
+    vector<Bank_Account> accounts;
+    public:
+
+    void Add_Account(string name, int account_num, double balance){
+        accounts.push_back(Bank_Account(name,account_num,balance));
+    }
+    void Show_All_Account() {
+        cout << "** All Account Holders **\n";
+        for (int i = 0; i < accounts.size(); i++) {
+            cout << "Name: " << accounts[i].get_name() << ", Account Number: " << accounts[i].get_account_num() << ", Balance: " << accounts[i].get_balance() << endl;
+        }
+    }
+    void Search_Account(int account){
+        cout<<"Account Holder\n";
+        for(int i = 0; i<accounts.size(); i++){
+            if(accounts[i].get_account_num() == account){
+                cout << "Name: " << accounts[i].get_name() << ", Account Number: " << accounts[i].get_account_num() << ", Balance: " << accounts[i].get_balance() << endl;
+            }
+        }
+    }
+    Bank_Account* findAccount(int account_num){
+        for(int i = 0; i<accounts.size(); i++){
+            return &accounts[i];
+        }
+    }
+};
