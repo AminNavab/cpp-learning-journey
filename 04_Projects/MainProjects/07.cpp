@@ -118,3 +118,69 @@ void update_student(vector<student> &students){
         }
     }
 }
+// creat function to delet student
+void delet_student(vector<student> &students){
+    string name;
+    cout<<"Enter Name To Delet: ";
+    getline(cin>>ws, name);
+    for(int i =0; i<students.size(); i++){
+        if(students[i].getName()== name){
+            students.erase((students.begin()+i));
+            cout<<"Student Remove Successfully...\n";
+        }
+    }
+}
+int main(){
+    vector<student> students;
+    students.push_back(student(1, 20, "amin"));
+    char op;
+    do{
+        int choice;
+        cout<<"\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<<"\t\t***** STUDENT MANAGEMENT SYSTEM *****\n";
+        cout<<"\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<<"1-Add New Student\n";
+        cout<<"2-Display All Student\n";
+        cout<<"3-Search Student\n";
+        cout<<"4-Update Student\n";
+        cout<<"5-DElet Student\n";
+        cout<<"6-Exit\n";
+        cout<<"Enter Your Choice: ";
+        cin>>choice;
+        switch(choice){
+            case 1:{
+                add_new_student(students);
+                break;
+            }
+            case 2:{
+                display_all_student(students);
+                break;
+            }
+            case 3:{
+                searc_student(students);
+                break;
+            }
+            case 4:{
+                update_student(students);
+                break;
+            }
+            case 5:{
+                delet_student(students);
+                break;
+            }
+        case 6:{
+            exit(1);
+        }
+        default:{
+            cout<<"Invalid Number....\n";
+        }
+    }
+        cout<<"Do Yout Want To Continue [Y/N] ?? : ";
+        cin>>op;
+    }while(op=='y' || op=='Y');
+    
+
+
+
+    return 0;
+}
