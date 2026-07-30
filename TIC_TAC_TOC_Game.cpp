@@ -7,6 +7,53 @@ void computer_move(char *spaces, char computer);
 bool check_winner(char *spaces, char player, char computer);
 bool check_tic(char *spaces);
 int main(){
+    cout<<"Table Positions Guide"<<endl;
+    cout<<"You : X"<<endl;
+    cout<<"Computer : O"<<endl;
+    cout<<"     |     |     \n";
+    cout<<"  "<<"1"<<"  |  "<<"2"<<"  |  "<<"3"<<" \n";
+    cout<<"_____|_____|_____\n";
+    cout<<"     |     |    \n";
+    cout<<"  "<<"4"<<"  |  "<<"5"<<"  |  "<<"6"<<" \n";
+    cout<<"_____|_____|_____\n";
+    cout<<"     |     |     \n";
+    cout<<"  "<<"7"<<"  |  "<<"8"<<"  |  "<<"9"<<" \n";
+    cout<<"     |     |     \n";
+    cout<<"*******************\n";
+    cout<<"Start thr Game"<<endl;
+
+     // TIC_TAC_TOC :
+    char spaces[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+    char player = 'X';
+    char computer = 'O';
+    bool running = true;
+    draw_board(spaces);
+    while (running)
+    {
+        player_move(spaces, player);
+        draw_board(spaces);
+        if(check_winner(spaces, player, computer)){
+            running = false;
+            break;
+        }
+        else if(check_tic(spaces)){
+            running = false;
+            break;
+        }
+
+        computer_move(spaces, computer);
+        draw_board(spaces);
+        if(check_winner(spaces, player, computer)){
+            running = false;
+        }
+        else if(check_tic(spaces)){
+            running = false;
+            break;
+        }
+    }
+    cout<<"thanks for playing....";
+
+
     return 0;
 }
 
@@ -37,6 +84,7 @@ void player_move(char *spaces, char player){
     
 }
 void computer_move(char *spaces, char computer){
+    cout<<"Computer's turn"<<endl;
     int number;
     srand(time(0));
     while (true)
