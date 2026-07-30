@@ -1,6 +1,11 @@
 #include<iostream>
 #include<ctime>
 using namespace std;
+void draw_board(char *spaces);
+void player_move(char *spaces, char player);
+void computer_move(char *spaces, char computer);
+bool check_winner(char *spaces, char player, char computer);
+bool check_tic(char *spaces);
 int main(){
     return 0;
 }
@@ -43,5 +48,47 @@ void computer_move(char *spaces, char computer){
         }
     }
     
+    
+}
+bool check_winner(char *spaces, char player, char computer){
+    if((spaces[0] != ' ') && spaces[0] == spaces[1] && spaces[1] == spaces[2]){
+        spaces[0] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else if((spaces[3] != ' ') && spaces[3] == spaces[4] && spaces[4] == spaces[5]){
+        spaces[3] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else if((spaces[6] != ' ') && spaces[6] == spaces[7] && spaces[7] == spaces[8]){
+        spaces[6] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    //----------------------
+    else if((spaces[0] != ' ') && spaces[0] == spaces[3] && spaces[3] == spaces[6]){
+        spaces[0] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else if((spaces[1] != ' ') && spaces[1] == spaces[4] && spaces[4] == spaces[7]){
+        spaces[1] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else if((spaces[2] != ' ') && spaces[2] == spaces[5] && spaces[5] == spaces[8]){
+        spaces[2] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    //------------------
+    else if((spaces[0] != ' ') && spaces[0] == spaces[4] && spaces[4] == spaces[8]){
+        spaces[0] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else if((spaces[2] != ' ') && spaces[2] == spaces[4] && spaces[4] == spaces[6]){
+        spaces[2] == player ? cout<<"you winnn...\n":cout<<"you lose!!!\n";
+    }
+    else{
+        return false;
+    }
+    return true;
+}
+bool check_tic(char *spaces){
+    for(int i = 0; i<9; i++){
+        if(spaces[i]==' '){
+            return false;
+        }
+    }
+    cout<<"it's a tie!!\n";
+    return true;
     
 }
